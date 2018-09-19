@@ -1,7 +1,8 @@
-const gulp = reqiure('gulp');
-const sass = require('gulp-sass');
-const minifyCSS = require('gulp-clean-css');
-const autoprefixer = require('gulp-autoprefixer');
+const gulp =            require('gulp');
+const sass =            require('gulp-sass');
+const minifyCSS =       require('gulp-clean-css');
+const autoprefixer =    require('gulp-autoprefixer');
+const browserSync =     require('browser-sync');
 
 // Copy all HTML files
 gulp.task('copyHTML', () => {
@@ -27,9 +28,18 @@ gulp.task('minifyCSS', () => {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('default', ['copyHTML', 'compileSASS', 'minifyCSS']);
+// Browser Syn
+gulp.task('serve', () => {
+    browserSync.init({
+        server: './dist'
+    })
+})
+
+gulp.task('default', ['copyHTML', 'compileSASS', 'minifyCSS', 'serve']);
 
 gulp.task('watch', () => {
-    gulp.watch('src/*.html', ['copyHTML']);
-    gulp.watch('src/sass/*.scss', ['compileSASS', 'minifyCSS']);
+    gulp.watch('src/*.html', ['copyHTML', 'serve']);
+    gulp.watch('src/sass/*.scss', ['compileSASS', 'minifyCSS', 'serve']);
+    gulp.watch("dist/*.html").on('change', browserSync.reload);
+    gulp.watch("dist/css/*.css").on('change', browserSync.reload);
 });
