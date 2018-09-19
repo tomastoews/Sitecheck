@@ -2,7 +2,7 @@ const gulp =            require('gulp');
 const sass =            require('gulp-sass');
 const minifyCSS =       require('gulp-clean-css');
 const autoprefixer =    require('gulp-autoprefixer');
-const browserSync =     require('browser-sync');
+const browserSync =     require('browser-sync').create();
 
 // Copy all HTML files
 gulp.task('copyHTML', () => {
@@ -35,11 +35,11 @@ gulp.task('serve', () => {
     })
 })
 
-gulp.task('default', ['copyHTML', 'compileSASS', 'minifyCSS', 'serve']);
+gulp.task('default', ['copyHTML', 'compileSASS', 'minifyCSS']);
 
-gulp.task('watch', () => {
-    gulp.watch('src/*.html', ['copyHTML', 'serve']);
-    gulp.watch('src/sass/*.scss', ['compileSASS', 'minifyCSS', 'serve']);
+gulp.task('watch', ['serve'], () => {
+    gulp.watch('src/*.html', ['copyHTML']);
+    gulp.watch('src/sass/*.scss', ['compileSASS', 'minifyCSS']);
     gulp.watch("dist/*.html").on('change', browserSync.reload);
     gulp.watch("dist/css/*.css").on('change', browserSync.reload);
 });
