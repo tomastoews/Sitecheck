@@ -12,23 +12,23 @@ gulp.task('copyHTML', () => {
 
 // Compile Sass
 gulp.task('compileSASS', () => {
-    gulp.src('src/sass/styles.scss')
+    gulp.src('./src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'not ie <= 8'],
             cascade: false
         }))
-        .pipe(gulp.dest('dist/css/styles.css'));
+        .pipe(gulp.dest('./dist/css'));
 });
 
 // Minify CSS
 gulp.task('minifyCSS', () => {
-    gulp.src('dist/css/styles.css')
+    gulp.src('dist/css/*.css')
         .pipe(minifyCSS())
         .pipe(gulp.dest('dist/css'));
 });
 
-// Browser Syn
+// Browser Sync
 gulp.task('serve', () => {
     browserSync.init({
         server: './dist'
