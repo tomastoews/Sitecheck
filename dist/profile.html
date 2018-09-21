@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Tomas Töws">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
+            crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Profile | Sitecheck</title>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li class="logo"></li>
+            <li class="item-primary">
+                <a href="index.html" draggable="false"><i class="far fa-window-maximize"></i> <span>PAGE TEST</span></a>
+            </li>
+            <li class="item-primary">
+                <a href="profile.html" draggable="false"><i class="fas fa-file-alt"></i> <span>MY PROFILE</span></a>
+            </li>
+            <li class="item-primary border-right">
+                <a href="#" draggable="false"><i class="fas fa-cog"></i> <span>SETTINGS</span></a>
+            </li>
+            <li class="item-secondary user-item">
+                <a href="profile.html" draggable="false"><i class="far fa-user"></i> <span>Tomas Töws</span></a>
+            </li>
+            <li class="item-secondary">
+                <a href="#" draggable="false" id="messages-item"><i class="far fa-envelope"></i></a>
+            </li>
+            <li class="item-secondary">
+                <a href="#" draggable="false" id="search-item"><i class="fas fa-search"></i></a>
+            </li>
+        </ul>
+    </nav> 
+
+    <div id="search" class="center-content">
+        <form class="form">
+            <input class="input form-input input-large text-gray" type="text" name="url" placeholder="Please enter something...">
+            <input class="button form-button bg-purple" type="submit" value="Search">
+        </form>
+    </div>
+
+    <div id="messages" class="center-content-y">
+        <div class="center-content-y">
+            <i class="far fa-comments"></i>
+            <p class="text-gray">No new messages...</p>
+        </div>
+        <button class="button bg-purple" id="close-messages">Close</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" id="profile">
+
+        <p class="text-heading text-purple">Profile</p>
+        <div class="card main-card">
+            <div class="card-section" id="profile-form">
+                <div id="user-profile">
+                    <div class="center-content" id="profile-picture">
+                        <div><i class="far fa-user text-lightgray"></i></div>
+                        <div class="plus"><i class="fas fa-plus-square text-purple"></i></div>
+                    </div>
+                </div>
+                <div id="user-data">
+                    <div class="input-group">
+                        <label for="first-name">First name:</label>
+                        <input id="first-name" class="input text-small text-gray" type="text">
+                    </div>
+                    <div class="input-group">
+                        <label for="last-name">Last name:</label>
+                        <input id="last-name" class="input text-small text-gray" type="text">
+                    </div>
+                    <div class="input-group last">
+                        <label for="email">E-Mail:</label>
+                        <input id="email" class="input text-small text-gray" type="email">
+                    </div>
+                </div>
+                <div id="change-password">
+                    <form>
+                        <div class="input-group last">
+                            <label for="password">Password:</label>
+                            <input name="password" id="password" class="input text-gray" type="password">
+                        </div>
+                        <input type="submit" class="button bg-purple" value="Change Password">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <button class="button submit-button bg-purple">Save</button>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
