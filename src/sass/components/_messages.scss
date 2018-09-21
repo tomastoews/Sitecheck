@@ -1,0 +1,30 @@
+
+#messages {
+    z-index: 2;
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    border: $border_line;
+    border-top: none;
+    margin-top: 1px;
+    height: 300px;
+    width: 300px;
+    right: 0;
+    justify-content: space-around;
+    div {
+        align-self: center;
+        i {
+            font-size: 50px;
+            color: $color_lightgray;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+@include mediaQuery_500 {
+    #messages {
+        width: 100%;
+    }
+}

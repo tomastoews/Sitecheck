@@ -1,0 +1,32 @@
+
+.input {
+    border: $border_line;
+    padding: $input_padding;
+    font-size: $input_fontsize;
+    font-weight: $input_fontweight;
+    border-radius: $input_border-radius;
+}
+
+.form-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: $inputgroup_margin;
+    label {
+        margin-bottom: 10px;
+    }
+    // Last input group at the bottom
+    &.last {
+        margin-bottom: 25px;
+    }
+}
+
+.input-large {
+    width: 500px;
+}

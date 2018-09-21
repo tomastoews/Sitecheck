@@ -1,0 +1,39 @@
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    span {
+        margin-right: 25px;
+    }
+}
+
+@include mediaQuery_1250 {
+    .form {
+        .input {
+            width: 40vw;
+        }
+    }
+}
+
+@include mediaQuery_830 {
+    .form {
+        .input {
+            width: auto;
+        }
+    }
+}
+
+@include mediaQuery_740 {
+    .form-collapse {
+        flex-direction: column;
+        width: 100%;
+        span, .input { 
+            margin-bottom: 20px; 
+        }
+        .input { 
+            width: 100%; 
+        }
+    }
+}

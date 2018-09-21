@@ -1,0 +1,55 @@
+
+#profile {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:  'header header header'
+                          'card card card'
+                          'none none button';
+
+    .text-heading { grid-area: header; }
+    .main-card { grid-area: card; }
+    .submit-button { grid-area: button; }
+}
+
+#profile .card #profile-form {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas: 'user-profile user-data change-password';
+
+    #user-profile { grid-area: user-profile; }
+    #user-data { grid-area: user-data; }
+    #change-password { grid-area: change-password; }
+
+    #profile-picture {
+        div i {
+            font-size: 100px;
+        }
+        div.plus {
+            position: absolute;
+            transform: translate(40px, 40px);
+            background-color: #fff;
+            i {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@include mediaQuery_740 {
+    #profile .card #profile-form {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 'user-profile user-data'
+                             'none change-password';
+    }
+}
+
+@include mediaQuery_600 {
+    #profile .card #profile-form {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'user-profile'
+                             'user-data'
+                             'change-password';
+    }
+}

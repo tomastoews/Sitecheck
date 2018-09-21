@@ -1,0 +1,20 @@
+
+.button {
+    border: none;
+    padding: $button_padding;
+    font-size: $button_fontsize;
+    font-weight: $button_fontweight;
+    border-radius: $button_border-radius;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.button:focus, .button:visited {
+    border: none;
+}
+
+.form-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-right: 0;
+}

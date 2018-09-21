@@ -5,78 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Tomas Töws">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Sitecheck</title>
 </head>
 <body>
     
     <!-- Navigation -->
     <nav>
-        <div id="logo"></div>
         <ul>
-            <li>
-                <a href="/"><i>website icon</i> PAGE TEST</a>
+            <li class="logo"></li>
+            <li class="item-primary">
+                <a href="index.html" draggable="false"><i class="far fa-window-maximize"></i> <span>PAGE TEST</span></a>
             </li>
-            <li>
-                <a href="/"><i>document icon</i> MY RESULTS</a>
+            <li class="item-primary">
+                <a href="profile.html" draggable="false"><i class="fas fa-file-alt"></i> <span>MY PROFILE</span></a>
             </li>
-            <li>
-                <a href="/"><i>settings icon</i> SETTINGS</a>
+            <li class="item-primary border-right">
+                <a href="#" draggable="false"><i class="fas fa-cog"></i> <span>SETTINGS</span></a>
             </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#"><i>search icon</i></a>
+            <li class="item-secondary user-item">
+                <a href="profile.html" draggable="false"><i class="far fa-user"></i> <span>Tomas Töws</span></a>
             </li>
-            <li>
-                <a href="#">
-                    <i>envelop icon</i>
-                    <div class="bg-blue msg-number">1</div>
-                </a>
+            <li class="item-secondary">
+                <a href="#" draggable="false" id="messages-item"><i class="far fa-envelope"></i></a>
             </li>
-            <li>
-                <a href="#"><i>user icon & user name</i> <span>user name</span></a>
+            <li class="item-secondary">
+                <a href="#" draggable="false" id="search-item"><i class="fas fa-search"></i></a>
             </li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main>
+    <div id="search" class="center-content">
+        <form class="form">
+            <input class="input form-input input-large text-gray" type="text" name="url" placeholder="Please enter something...">
+            <input class="button form-button bg-purple" type="submit" value="Search">
+        </form>
+    </div>
 
-        <p class="text-gray">Test your website</p>
-        <div class="card">
-            <div class="card-section">
-                <span class="text-gray">Try the URL:</span>
-                <form class="input-form">
-                    <input class="text-gray" type="text" name="url">
-                    <input class="bg-purple" type="submit" value="Analyse">
+    <div id="messages" class="center-content-y">
+        <div class="center-content-y">
+            <i class="far fa-comments"></i>
+            <p class="text-gray">No new messages...</p>
+        </div>
+        <button class="button bg-purple" id="close-messages">Schließen</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" id="home">
+
+        <p class="text-heading text-purple">Test your website</p>
+        <div class="card main-card">
+            <div class="card-section center-content">
+                <form class="form form-collapse">
+                    <span class="text-gray">Try the URL:</span>
+                    <input class="input form-input input-large text-gray" type="text" name="url">
+                    <input class="button form-button bg-purple" type="submit" value="Analyse">
                 </form>
             </div>
-            <div class="card-section">
-                <p class="text-gray">SCORE RANGE:</p>
-                <div>
-                    <i>red circle icon</i>
+            <div class="card-section center-content">
+                <p class="text-gray text-bold margin-right">SCORE RANGE:</p>
+                <div class="margin-right">
+                    <i class="fas fa-circle text-red"></i>
                     <span class="text-gray">Negative (-1 to -0,75)</span>
                 </div>
-                <div>
-                    <i>orange circle icon</i>
+                <div class="margin-right">
+                    <i class="fas fa-circle text-orange"></i>
                     <span class="text-gray">Neutral (-0,75 to 0,25)</span>
                 </div>
-                <div>
-                    <i>green circle icon</i>
+                <div class="margin-right">
+                    <i class="fas fa-circle text-green"></i>
                     <span class="text-gray">Positive (0,25 to 1)</span>
                 </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-section">
-                <i>circle icon</i>
-                YOUR SCORE: <b class="text-green">0,75</b>
+        <div class="card sub-card">
+            <div class="card-section center-content">
+                <i class="fas fa-check-circle text-large text-green margin-right"></i>
+                <span class="text-gray text-bold margin-right">YOUR SCORE:</span> <b class="text-green text-large text-bold">0,75</b>
             </div>
         </div>
 
     </main>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

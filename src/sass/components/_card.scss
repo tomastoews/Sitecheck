@@ -1,0 +1,19 @@
+
+.card {
+    background-color: #fff;
+    display: inline-block;
+    border: $border_line;
+    border-bottom: none;
+
+    .card-section {
+        padding: $card_padding;
+        border-bottom: $border_line;
+    }
+}
+
+@include mediaQuery_740 {
+    .card .card-section {
+        display: flex;
+        flex-direction: column;
+    }
+}
