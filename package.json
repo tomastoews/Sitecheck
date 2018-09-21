@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A website for testing website performances",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Tomas Töws",
