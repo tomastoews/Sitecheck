@@ -18,3 +18,9 @@
     border-bottom-left-radius: 0;
     margin-right: 0;
 }
+
+@include mediaQuery_740 {
+    .form-button {
+        border-radius: $button_border-radius;
+    }
+}

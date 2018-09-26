@@ -141,6 +141,10 @@ nav {
                 min-width: auto!important;
                 border: none!important;
             }
+            li.item-primary a:hover {
+                color: black;
+                background-color: white;
+            }
         }
     }
 }
