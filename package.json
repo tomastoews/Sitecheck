@@ -1,19 +1,16 @@
 {
-  "name": "Sitecheck",
+  "name": "sitecheck",
   "version": "1.0.0",
-  "description": "A website for testing website performances",
-  "scripts": {
-    "deploy": "gh-pages -d dist"
-  },
-  "keywords": [],
   "author": "Tomas Töws",
-  "license": "ISC",
+  "license": "UNLICENSED",
+  "description": "A website UI for testing website performances",
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "build-and-deploy": "rm -r -f -v dist/ && parcel build src/index.html && node rewriteURLs.js && ./deploy.sh"
+  },
   "devDependencies": {
-    "browser-sync": "^2.24.7",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.1"
+    "parcel-bundler": "^1.12.4",
+    "replace-in-file": "^4.2.0",
+    "sass": "^1.23.3"
   }
 }
