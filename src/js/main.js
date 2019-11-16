@@ -12,6 +12,15 @@ var toggleDisplay = function (element) {
     }
 }
 
-searchItem.addEventListener('click', function() { toggleDisplay(search) });
-messagesItem.addEventListener('click', function () { toggleDisplay(messages) });
-closeMessages.addEventListener('click', function () { toggleDisplay(messages) });
+searchItem.addEventListener('click', function(e) {
+    e.preventDefault();
+    toggleDisplay(search)
+});
+messagesItem.addEventListener('click', function (e) { 
+    e.preventDefault();
+    toggleDisplay(messages) 
+});
+closeMessages.addEventListener('click', function (e) {
+    e.preventDefault();
+    toggleDisplay(messages) 
+});
