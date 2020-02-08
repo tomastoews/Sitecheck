@@ -15,13 +15,19 @@ performReplacements({
     files: path.join(__dirname, 'dist/*.html'),
     from: [
         /href="\//g,
+        /href=\//g,
         /src="\//g,
-        /<base href="/g
+        /src=\//g,
+        /<base href="/g,
+        /<base href=/g
     ],
     to: [
         'href="',
+        'href=',
         'src="',
+        'src=',
         '<base href="/',
+        '<base href=/',
     ],
     countMatches: true,
 });
