@@ -2,4 +2,5 @@
 Analytics website UI
 
 # Demo
-https://sitecheck.netlify.com/
+https://projects.tomastoews.de/sitecheck
+
